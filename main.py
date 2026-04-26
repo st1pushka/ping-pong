@@ -40,6 +40,15 @@ window = display.set_mode((win_width, win_height))
 display.set_caption("Ping-Pong")
 background = transform.scale(image.load("tennis-court.webp"), (win_width, win_height))
 
+mixer.init()
+mixer.music.load('music.ogg')
+mixer.music.play()
+
+font.init()
+font = font.Font(None, 70)
+win1 = font.render('PLAYER 1 WIN!', True, (255, 215, 0))
+win2 = font.render('PLAYER 2 WIN!', True, (255, 215, 0))
+
 finish = False
 game = True
 clock = time.Clock()
