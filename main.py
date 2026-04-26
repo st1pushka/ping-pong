@@ -29,15 +29,8 @@ class Player(GameSprite):
         if keys[K_s] and self.rect.y < win_height - 80:
             self.rect.y += self.speed
 
-ball = GameSprite("tennis.png", 10, 10, 10, 5, 5)
-
-speed_x = 3
-speed_y = 3
-
-finish = False
-game = True
-while game:
-    display.update()
-    if finish == False:
-        ball.rect.x += speed_x
-        ball.rect.y += speed_y
+win_width = 700
+win_height = 500
+window = display.set_mode((win_width, win_height))
+display.set_caption("Ping-Pong")
+background = transform.scale(image.load("tennis-court.webp"), (win_width, win_height))
